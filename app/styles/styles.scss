@@ -6,7 +6,10 @@
 @import "helpers/global";
 @import "helpers/ultilities";
 
+@import "layout/structure";
 @import "layout/header";
+@import "layout/about";
+@import "layout/number";
 @import "layout/footer";
 
 @import "components/button";

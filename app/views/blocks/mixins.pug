@@ -1,0 +1,35 @@
+//- mixin ListItem( title, caption)
+//-   li.list-item
+//-     h2.list-title= title
+//-     if caption
+//-       span.list-caption= caption
+//-     if block
+//-       block
+
+mixin MenuItemLink (title, href= "#" )
+  li.header-menu-item
+          a.header-menu-link(href= href)=title
+
+mixin HeaderBottomItem (number = "0", text = "text" )
+  .header-bottom-item
+        span.header-bottom-number= number
+        span.header-bottom-text= text
+
+mixin BlockBox(caption, title, desc)
+  .block-box
+    h3.block-box-caption= caption
+    h2.block-box-heading= title
+    if desc
+      p.block-box-desc= desc
+
+mixin AboutItem(src, classIcon, title, alt = "")
+  .about-item
+    img.about-image(src= src alt= alt)
+    .about-content
+      i(class= classIcon).about-icon
+      span.about-title= title
+
+mixin NumberItem(count, text)
+  li.number-item
+    h4.number-count= count
+    span.number-text= text
