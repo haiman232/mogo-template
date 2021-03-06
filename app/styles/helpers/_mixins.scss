@@ -35,7 +35,7 @@
   background-color: $color;
 }
 
-@mixin flex($justify: flex-start, $align: stretch, $direction: row, $display: flex, $wrap: nowrap) {
+@mixin flex($align: stretch, $justify: flex-start, $direction: row, $display: flex, $wrap: nowrap) {
   display: $display;
   justify-content: $justify;
   align-items: $align;

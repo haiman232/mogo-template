@@ -33,3 +33,10 @@ mixin NumberItem(count, text)
   li.number-item
     h4.number-count= count
     span.number-text= text
+
+mixin ServiceItem(src, title, desc, alt = "")
+  li.service-item
+        img.service-item-icon(src= src, alt= alt)
+        .service-item-content
+          h3.service-title= title
+          p.service-desc= desc
