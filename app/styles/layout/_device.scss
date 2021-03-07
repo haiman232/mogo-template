@@ -1,0 +1,29 @@
+.device {
+  padding-top: 9.3rem;
+  background: linear-gradient(to bottom, rgba(white, 0.6), rgba(white, 0.8)),
+    url("../images/img-device-bg.png") no-repeat center / cover;
+
+  // Can giua anh khi khong dung position
+  // &-media {
+  //   text-align: center;
+  // }
+
+  &-image {
+    display: inline-block;
+    margin: 0 auto -9.3rem;
+    @include absoluteCenter("left", relative);
+  }
+
+  @include maxWidth(757px) {
+    padding-top: 5rem;
+    &-image {
+      max-width: 80%;
+      margin: 0 auto -4.6rem;
+    }
+  }
+  @include maxWidth(413px) {
+    &-image {
+      margin: 0 auto -4.3rem;
+    }
+  }
+}
