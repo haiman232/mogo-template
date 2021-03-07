@@ -367,7 +367,8 @@ body {
     text-overflow: ellipsis;
     width: 100%;
     max-width: 100%;
-    white-space: pre-wrap; }
+    white-space: pre-wrap;
+    word-break: break-all; }
   @media screen and (max-width: 768px) {
     .about {
       padding-top: 5rem; }
@@ -450,7 +451,8 @@ body {
       text-overflow: ellipsis;
       width: 100%;
       max-width: 100%;
-      white-space: pre-wrap; } }
+      white-space: pre-wrap;
+      word-break: break-all; } }
 
 .service {
   padding-top: 9.3rem;
@@ -515,7 +517,8 @@ body {
     text-overflow: ellipsis;
     width: 100%;
     max-width: 100%;
-    white-space: pre-wrap; }
+    white-space: pre-wrap;
+    word-break: break-all; }
   .service-desc {
     color: #999;
     line-height: 1.4;
@@ -556,3 +559,99 @@ body {
 
 .wedo {
   padding-top: 9.3rem; }
+  .wedo-image {
+    margin-bottom: 2rem;
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100%; }
+  .wedo-accordion {
+    margin-bottom: 2rem; }
+    .wedo-accordion.is-active .wedo-accordion-content {
+      display: block; }
+  .wedo-accordion:last-child {
+    margin-bottom: 0; }
+  .wedo-accordion-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    padding: 1.5rem;
+    border: 1px solid #ccc;
+    cursor: pointer; }
+  .wedo-accordion-title {
+    margin-left: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    max-width: 100%;
+    white-space: pre-wrap;
+    word-break: break-all;
+    line-height: 1.6;
+    padding-right: 2rem; }
+  .wedo-accordion-arrow {
+    margin-left: auto;
+    font-size: 3rem;
+    font-weight: 400;
+    color: #ccc; }
+  .wedo-accordion-content {
+    display: none;
+    padding: 2rem;
+    border: 1px solid #ccc;
+    border-top: 0;
+    font-size: 1.5rem;
+    font-family: "Roboto", sans-serif;
+    color: #999;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.4; }
+  .wedo-accordion-text {
+    padding-right: 2rem;
+    height: 13rem;
+    overflow-y: auto; }
+    .wedo-accordion-text::-webkit-scrollbar {
+      width: 0.6rem; }
+    .wedo-accordion-text::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      border-radius: 2rem; }
+    .wedo-accordion-text::-webkit-scrollbar-thumb {
+      background-color: #95e1d3;
+      border-radius: 2rem; }
+  @media screen and (min-width: 768px) {
+    .wedo-container {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+      align-items: stretch;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap; }
+    .wedo-content, .wedo-image {
+      width: calc(50% - 1.5rem); } }
+  @media screen and (max-width: 767px) {
+    .wedo {
+      padding-top: 5rem; } }

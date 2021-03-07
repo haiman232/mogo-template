@@ -1,6 +1,0 @@
-.device {
-  padding-top: 9.3rem;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.6)), to(rgba(255, 255, 255, 0.8))), url("../images/img-device-bg.png") no-repeat center/cover;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.8)), url("../images/img-device-bg.png") no-repeat center/cover; }
-  .device-image {
-    text-align: center; }

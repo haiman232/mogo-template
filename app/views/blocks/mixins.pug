@@ -40,3 +40,12 @@ mixin ServiceItem(src, title, desc, alt = "")
         .service-item-content
           h3.service-title= title
           p.service-desc= desc
+
+mixin WedoItem (src, title, iconClass, content, active = "", alt = "")
+  li.wedo-accordion(class= active)
+          .wedo-accordion-header
+            img.wedo-accordion-icon(src= src)
+            h3.wedo-accordion-title= title
+            i(class= iconClass).wedo-accordion-arrow
+          .wedo-accordion-content
+            p.wedo-accordion-text= content

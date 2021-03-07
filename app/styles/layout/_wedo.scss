@@ -1,3 +1,84 @@
 .wedo {
   padding-top: 9.3rem;
+  &-image {
+    margin-bottom: 2rem;
+    object-fit: cover;
+    width: 100%;
+  }
+  &-accordion {
+    margin-bottom: 2rem;
+    &.is-active {
+      .wedo-accordion-content {
+        display: block;
+      }
+    }
+  }
+  &-accordion:last-child {
+    margin-bottom: 0;
+  }
+  &-accordion-header {
+    @include flex(center);
+    padding: 1.5rem;
+    border: 1px solid $grey-dark-color;
+    cursor: pointer;
+  }
+  &-accordion-title {
+    margin-left: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    @include textClamp(1);
+    line-height: 1.6;
+    padding-right: 2rem;
+  }
+  &-accordion-arrow {
+    margin-left: auto;
+    font-size: 3rem;
+    font-weight: 400;
+    color: $grey-dark-color;
+  }
+
+  &-accordion-content {
+    display: none;
+    padding: 2rem;
+    border: 1px solid $grey-dark-color;
+    border-top: 0;
+    font-size: 1.5rem;
+    font-family: $secondary-font;
+    color: $text-color;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.4;
+  }
+  &-accordion-text {
+    padding-right: 2rem;
+    height: 13rem;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+      width: 0.6rem;
+    }
+
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      border-radius: 2rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $third-color;
+      border-radius: 2rem;
+    }
+  }
+
+  @include minWidth(768px) {
+    &-container {
+      @include flex(stretch, space-between);
+    }
+    &-content,
+    &-image {
+      width: calc(50% - 1.5rem);
+    }
+  }
+
+  @include maxWidth(767px) {
+    padding-top: 5rem;
+  }
 }
