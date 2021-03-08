@@ -1,0 +1,79 @@
+.quote {
+  padding: 6.5rem 0;
+  @include bgColor($grey-color);
+  &-container {
+    @include flex(center, space-between);
+  }
+
+  &-arrow {
+    color: $grey-dark-color;
+    cursor: pointer;
+    padding: 1rem 2rem;
+    font-size: 3rem;
+  }
+
+  &-content {
+    @include flex(center);
+    padding-left: 5.5rem;
+    padding-right: 5.5rem;
+  }
+
+  &-icon {
+    @include size(15rem);
+    @include flex(center, center);
+    border: 3px solid $third-color;
+    flex-shrink: 0;
+  }
+  &-info {
+    padding-left: 6rem;
+  }
+  &-desc {
+    font-size: 2.5rem;
+    font-weight: 300;
+    line-height: 1.4;
+    font-family: $secondary-font;
+    margin-bottom: 2.5rem;
+    font-style: italic;
+    color: $text-color;
+    @include textClamp(3);
+  }
+
+  &-author {
+    font-family: $third-font;
+    font-size: 2.4rem;
+    padding-left: 7.5rem;
+    position: relative;
+    &::before {
+      content: "";
+      @include size(6rem, 0.5rem);
+      @include absoluteCenter("top");
+      left: 0;
+      @include bgColor($primary-color);
+    }
+  }
+
+  @include maxWidth(757px) {
+    &-arrow {
+      display: none;
+    }
+    &-content {
+      display: block;
+      padding: 0;
+    }
+    &-icon {
+      @include size(10rem);
+      margin: 0 auto;
+    }
+    &-info {
+      margin-top: 2rem;
+      padding-left: 0;
+    }
+    &-desc {
+      display: block;
+      font-size: 1.6rem;
+    }
+    &-author {
+      font-size: 2rem;
+    }
+  }
+}

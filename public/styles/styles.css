@@ -655,3 +655,119 @@ body {
   @media screen and (max-width: 767px) {
     .wedo {
       padding-top: 5rem; } }
+
+.quote {
+  padding: 6.5rem 0;
+  background-color: #f8f8f8; }
+  .quote-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap; }
+  .quote-arrow {
+    color: #ccc;
+    cursor: pointer;
+    padding: 1rem 2rem;
+    font-size: 3rem; }
+  .quote-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    padding-left: 5.5rem;
+    padding-right: 5.5rem; }
+  .quote-icon {
+    width: 15rem;
+    height: 15rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    border: 3px solid #95e1d3;
+    -ms-flex-negative: 0;
+    flex-shrink: 0; }
+  .quote-info {
+    padding-left: 6rem; }
+  .quote-desc {
+    font-size: 2.5rem;
+    font-weight: 300;
+    line-height: 1.4;
+    font-family: "Roboto", sans-serif;
+    margin-bottom: 2.5rem;
+    font-style: italic;
+    color: #999;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    max-width: 100%;
+    white-space: pre-wrap;
+    word-break: break-all; }
+  .quote-author {
+    font-family: "Kaushan Script", cursive;
+    font-size: 2.4rem;
+    padding-left: 7.5rem;
+    position: relative; }
+    .quote-author::before {
+      content: "";
+      width: 6rem;
+      height: 0.5rem;
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      left: 0;
+      background-color: #e68082; }
+  @media screen and (max-width: 757px) {
+    .quote-arrow {
+      display: none; }
+    .quote-content {
+      display: block;
+      padding: 0; }
+    .quote-icon {
+      width: 10rem;
+      height: 10rem;
+      margin: 0 auto; }
+    .quote-info {
+      margin-top: 2rem;
+      padding-left: 0; }
+    .quote-desc {
+      display: block;
+      font-size: 1.6rem; }
+    .quote-author {
+      font-size: 2rem; } }
