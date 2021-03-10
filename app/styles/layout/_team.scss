@@ -31,8 +31,6 @@
     object-fit: cover;
   }
 
-  @include hoverEffect(".team-main", ".team-content");
-
   &-social {
     @include flex(center, center);
   }
@@ -99,6 +97,8 @@
     }
   }
 }
+
+@include hoverEffect(".team-main", ".team-content");
 
 .brand {
   padding: 5rem 0;

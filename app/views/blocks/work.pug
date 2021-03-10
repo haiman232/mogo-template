@@ -1,0 +1,27 @@
+section.work
+	.container
+		+BlockBox("What we do", "Some of our work", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem fugiat omnis ex, natus expedita nisi cupiditate dolorum ab commodi quo. Sequi sapiente temporibus inventore. Facere ad assumenda nemo culpa porro.")
+
+	.work-grid
+		+WorkItem("../images/img-work1.png", "fa fa-home", "Creatively designed", "Lorem ipsum dolor sit")
+		+WorkItem("../images/img-work2.png","fa fa-home",  "Creatively designed", "Lorem ipsum dolor sit")
+		+WorkItem("../images/img-work3.png", "fa fa-cog",  "Creatively designed", "Lorem ipsum dolor sit")
+		+WorkItem("../images/img-work4.png",  "fa fa-home" ,"Creatively designed", "Lorem ipsum dolor sit")
+		+WorkItem("../images/img-work5.png",  "fa fa-home" ,"Creatively designed", "Lorem ipsum dolor sit", "work-item--full")
+		+WorkItem("../images/img-work6.png", "fa fa-home" , "Creatively designed", "Lorem ipsum dolor sit")
+		+WorkItem("../images/img-work7.png",  "fa fa-home" ,"Creatively designed", "Lorem ipsum dolor sit")
+
+//- Work block use grid
+	.work-list
+		.work-column
+			+WorkItem("../images/img-work1.png", "fa fa-home", "Creatively designed", "Lorem ipsum dolor sit")
+			+WorkItem("../images/img-work2.png","fa fa-home",  "Creatively designed", "Lorem ipsum dolor sit")
+		.work-column
+			+WorkItem("../images/img-work3.png", "fa fa-cog",  "Creatively designed", "Lorem ipsum dolor sit")
+			+WorkItem("../images/img-work4.png",  "fa fa-home" ,"Creatively designed", "Lorem ipsum dolor sit")
+		.work-column
+			+WorkItem("../images/img-work5.png",  "fa fa-home" ,"Creatively designed", "Lorem ipsum dolor sit", "work-item--full")
+		.work-column
+			+WorkItem("../images/img-work6.png", "fa fa-home" , "Creatively designed", "Lorem ipsum dolor sit")
+			+WorkItem("../images/img-work7.png",  "fa fa-home" ,"Creatively designed", "Lorem ipsum dolor sit")
+

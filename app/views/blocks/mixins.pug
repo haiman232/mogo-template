@@ -79,3 +79,11 @@ mixin TeamItem(src, name, position, alt = "")
 		.team-info
 			h3.team-name= name
 			span.team-position= position
+
+mixin WorkItem (src, icon, title, desc, full = "")
+	.work-item(class= full)
+		img.work-image(src= src)
+		.work-content
+			i.work-icon(class= icon)
+			h3.work-title= title
+			span.work-desc.text.text--light= desc
