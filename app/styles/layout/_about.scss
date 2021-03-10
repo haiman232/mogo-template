@@ -4,51 +4,24 @@
   background-color: white;
 
   // Css using flexbox
-  &-list {
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: -3rem;
-  }
-  &-item {
-    width: calc(33.33% - 3rem);
-    margin-left: 3rem;
-    position: relative;
-    z-index: 1;
-    transition: all 0.25s linear;
-  }
-
-  // Css using grid
   // &-list {
-  //   display: grid;
-  //   grid-template-columns: repeat(3, 1fr);
-  //   grid-column-gap: 3rem;
+  //   display: flex;
+  //   flex-wrap: wrap;
+  //   margin-left: -3rem;
   // }
   // &-item {
+  //   width: calc(33.33% - 3rem);
+  //   margin-left: 3rem;
+  //   position: relative;
+  //   z-index: 1;
   //   transition: all 0.25s linear;
   // }
 
-  &-item:hover {
-    transform: translate(-1rem, -1rem);
-    .about-content {
-      opacity: 1;
-      visibility: visible;
-    }
-    &:after {
-      opacity: 1;
-      visibility: visible;
-      transform: translate(1rem, 1rem);
-    }
-  }
-
-  &-item:after {
-    content: "";
-    @include absoluteFull();
-    @include bgColor($third-color);
-    z-index: -1;
-    transition: all 0.25s linear;
-    opacity: 0;
-    visibility: hidden;
-    transform: translate(1rem, 1rem);
+  //Css using grid
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 3rem;
   }
 
   &-image {
@@ -56,18 +29,11 @@
   }
 
   &-content {
-    opacity: 0;
-    visibility: hidden;
-    @include absoluteFull();
-    z-index: 4;
-    background: linear-gradient(to bottom, rgba($primary-color, 0.8), rgba($secondary-color, 0.8));
+    @include flex(center, center, column);
     color: white;
     text-transform: uppercase;
-    @include flex(center, center, column);
-    transition: all 0.25s linear;
     text-align: center;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding: 2rem;
   }
   &-icon {
     font-size: 2rem;
@@ -81,41 +47,43 @@
     @include textClamp(1);
   }
 
+  @include hoverEffect(".about-item", ".about-content");
+
   @include maxWidth(768px) {
     padding-top: 5rem;
 
     //css using flexbox scroll snap
+    // &-list {
+    //   flex-wrap: nowrap;
+    //   overflow-x: auto;
+    //   padding: 1rem;
+    //   margin-left: unset;
+
+    //   scroll-snap-type: x mandatory;
+    //   scroll-snap-stop: always;
+    //   @include hideScroll();
+    // }
+    // &-item {
+    //   width: 80%;
+    //   flex-shrink: 0;
+    //   scroll-snap-align: start;
+    // }
+
+    //Css using grid scroll snap
     &-list {
-      flex-wrap: nowrap;
+      grid-auto-columns: 80%;
+      grid-auto-flow: column;
+      grid-template-columns: unset;
+      grid-row-gap: 2.5rem;
       overflow-x: auto;
       padding: 1rem;
-      margin-left: unset;
 
       scroll-snap-type: x mandatory;
       scroll-snap-stop: always;
       @include hideScroll();
     }
     &-item {
-      width: 80%;
-      flex-shrink: 0;
-      scroll-snap-align: start;
+      scroll-snap-align: center;
     }
-
-    //Css using grid scroll snap
-    //   &-list {
-    //     grid-auto-columns: 80%;
-    //     grid-auto-flow: column;
-    //     grid-template-columns: unset;
-    //     grid-row-gap: 2.5rem;
-    //     overflow-x: auto;
-    //     padding: 1rem;
-
-    //     scroll-snap-type: x mandatory;
-    //     scroll-snap-stop: always;
-    //     @include hideScroll();
-    //   }
-    //   &-item {
-    //     scroll-snap-align: center;
-    //   }
   }
 }

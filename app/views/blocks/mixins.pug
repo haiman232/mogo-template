@@ -1,19 +1,12 @@
-//- mixin ListItem( title, caption)
-//-   li.list-item
-//-     h2.list-title= title
-//-     if caption
-//-       span.list-caption= caption
-//-     if block
-//-       block
 
 mixin MenuItemLink (title, href= "#" )
 	li.header-menu-item
-					a.header-menu-link(href= href)=title
+		a.header-menu-link(href= href)=title
 
 mixin HeaderBottomItem (number = "0", text = "text" )
 	.header-bottom-item
-				span.header-bottom-number= number
-				span.header-bottom-text= text
+		span.header-bottom-number= number
+		span.header-bottom-text= text
 
 mixin BlockBox(caption, title, desc)
 	.block-box
@@ -36,22 +29,22 @@ mixin NumberItem(count, text)
 
 mixin ServiceItem(src, title, desc, alt = "")
 	li.service-item
-				img.service-item-icon(src= src, alt= alt)
-				.service-item-content
-					h3.service-title= title
-					p.service-desc= desc
+		img.service-item-icon(src= src, alt= alt)
+		.service-item-content
+			h3.service-title= title
+			p.service-desc= desc
 
 mixin WedoItem (src, title, iconClass, content, active = "", alt = "")
 	li.wedo-accordion(class= active)
-					.wedo-accordion-header
-						img.wedo-accordion-icon(src= src)
-						h3.wedo-accordion-title= title
-						i(class= iconClass).wedo-accordion-arrow
-					.wedo-accordion-content
-						p.wedo-accordion-text= content
+		.wedo-accordion-header
+			img.wedo-accordion-icon(src= src)
+			h3.wedo-accordion-title= title
+			i(class= iconClass).wedo-accordion-arrow
+		.wedo-accordion-content
+			p.wedo-accordion-text= content
 
 
-mixin QuoteContent (src, desc, quote, alt = "")
+mixin QuoteContent(src, desc, quote, alt = "")
 	i.fal.fa-angle-left.quote-arrow.quote-arrow-left
 	.quote-content
 		.quote-icon
@@ -60,3 +53,29 @@ mixin QuoteContent (src, desc, quote, alt = "")
 			p.quote-desc= desc
 			span.quote-author= quote
 	i.fal.fa-angle-right.quote-arrow.quote-arrow-right
+
+mixin SocialLink(fb = "#", tw = "#", pin ="#", ins="#")
+	ul.team-social
+		li.team-social-item
+			a.team-social-link(href= fb)
+				i.fab.fa-facebook-f
+		li.team-social-item
+			a.team-social-link(href= tw)
+				i.fab.fa-twitter
+		li.team-social-item
+			a.team-social-link(href= pin)
+				i.fab.fa-pinterest
+		li.team-social-item
+			a.team-social-link(href= ins)
+				i.fab.fa-instagram
+
+mixin TeamItem(src, name, position, alt = "")
+	li.team-item
+		.team-main
+			img.team-image(src= src, alt= alt)
+			.team-content
+				if block
+					block
+		.team-info
+			h3.team-name= name
+			span.team-position= position

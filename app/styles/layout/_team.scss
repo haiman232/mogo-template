@@ -1,0 +1,109 @@
+.team {
+  padding-top: 9.3rem;
+  padding-bottom: 9rem;
+
+  --image-height: 47rem;
+
+  //layout use flexbox
+  // &-list {
+  //   @include flex(stretch, space-between);
+  //   // margin-left: -3rem;
+  // }
+  // &-item {
+  //   width: calc(33.33% - 2rem);
+  //   // margin-left: 3rem;
+  // }
+
+  //layout use grid
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 3rem;
+  }
+
+  &-content {
+    @include flex(center, center);
+    color: white;
+  }
+
+  &-image {
+    @include size(100%, var(--image-height));
+    object-fit: cover;
+  }
+
+  @include hoverEffect(".team-main", ".team-content");
+
+  &-social {
+    @include flex(center, center);
+  }
+  &-social-link {
+    @include flex(center, center);
+    @include size(6rem);
+    @include bgColor($secondary-color);
+    color: $primary-color;
+    font-size: 2rem;
+    transition: all 0.3s linear;
+    &:hover {
+      @include bgColor($primary-color);
+      color: $secondary-color;
+    }
+  }
+
+  &-social-item {
+    &:not(:first-child) {
+      border-left: 1px solid $primary-color;
+    }
+  }
+
+  &-info {
+    padding: 3rem 1.5rem;
+    text-align: center;
+    line-height: 1.4;
+    height: calc(100% - var(--image-height));
+    @include flex(center, space-between, column);
+  }
+
+  &-name {
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    @include textClamp(2);
+  }
+
+  &-position {
+    font-family: $secondary-font;
+    font-style: italic;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: $grey-dark-color;
+  }
+
+  @include maxWidth(1023px) {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    &-list {
+      @include touchSlider(55%);
+    }
+  }
+
+  @include maxWidth(757px) {
+    --image-height: 40rem;
+    &-list {
+      @include touchSlider(85%);
+    }
+  }
+
+  @include maxWidth(413px) {
+    &-social-link {
+      @include size(4.5rem);
+    }
+  }
+}
+
+.brand {
+  padding: 5rem 0;
+  @include bgColor($grey-color);
+  @include maxWidth(767px) {
+    padding: 3rem 0;
+  }
+}
