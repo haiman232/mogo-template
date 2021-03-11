@@ -1,5 +1,5 @@
 .work {
-  padding: 9.3rem 0;
+  padding-top: 9.3rem;
   &-list {
     @include flex();
     height: 78rem;
@@ -16,6 +16,7 @@
   }
   &-desc {
     @include textClamp(1);
+    color: white;
   }
   &-icon {
     font-size: 3rem;
@@ -60,7 +61,7 @@
     }
   }
   @include maxWidth(767px) {
-    padding: 5rem 0;
+    padding-top: 5rem;
     &-column {
       width: 100%;
     }
@@ -73,14 +74,16 @@
   &-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 30rem;
+    grid-template-rows: 30rem 30rem;
     grid-template-areas:
       "h1 h3 h5 h6"
       "h2 h4 h5 h7";
   }
   &-item {
     height: 100%;
-
+    &:first-child {
+      grid-area: h1;
+    }
     &:last-child {
       grid-area: h7;
     }

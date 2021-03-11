@@ -87,3 +87,41 @@ mixin WorkItem (src, icon, title, desc, full = "")
 			i.work-icon(class= icon)
 			h3.work-title= title
 			span.work-desc.text.text--light= desc
+
+mixin PeopleItem (src="../images/img-people1.png", name = "Matthew Dix", job=" Graphic Design", desc="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque porro illum reiciendis unde praesentium illo iure ipsum eligendi, reprehenderit similique fugiat sunt minus odit hic vero deleniti consequuntur vitae? Optio?")
+	li.people-item
+		img.people-avatar(src= src)
+		.people-info
+			h3.people-name= name
+			span.people-job.text.text--light= job
+			p.people-desc.text.text--normal= desc
+
+mixin FooterBlog(href= "#", src="../images/img-blog1.png", title="Lorem ipsum dolor sit, amet consectetur adipisicing elit.", date ="Jan 9, 2021")
+	a(href= href)
+		.footer-blog
+			img.footer-blog-image(src= src)
+			.footer-blog-info
+				h4.footer-blog-title= title
+				span.footer-blog-date.text= date
+
+mixin FooterImage(src= "https://images.unsplash.com/photo-1517102901587-6f4a9ad72db4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1486&q=80")
+	.footer-image
+		img(src= src)
+
+mixin StoryItem(src="../images/img-blog1.png", number = 15, text= "Jan", title="Lorem ipsum dolor, sit amet ", desc="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt, alias debitis! Vel itaque explicabo eligendi qui iure saepe architecto corrupti, facere sint, maiores ipsam suscipit ab? Eius quia sint porro!",view= 542, comment= 18)
+	li.story-item
+		.story-media
+			img.story-image(src= src)
+			.story-date
+				span.story-date-number= number
+				span.story-date-text.text= text
+		h3.story-title= title
+		.story-desc
+			p.story-desc-inner.text.text--normal= desc
+		.story-meta
+			.story-meta-item
+				i.fa.fa-eye.story-meta-icon
+				span.story-meta-number.text= view
+			.story-meta-item
+				i.fa.fa-comment.story-meta-icon
+				span.story-meta-number.text= comment

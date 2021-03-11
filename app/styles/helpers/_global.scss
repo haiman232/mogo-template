@@ -5,9 +5,20 @@ img {
   display: block;
   max-width: 100%;
 }
-body{
+body {
   font-family: $primary-font;
   font-size: 1.4rem;
   line-height: 1;
   color: $title-color;
+}
+
+input,
+button {
+  outline: none;
+  font-family: $primary-font;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+button {
+  cursor: pointer;
 }

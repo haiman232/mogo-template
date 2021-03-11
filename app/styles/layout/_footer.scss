@@ -1,0 +1,145 @@
+.footer {
+  &-top {
+    padding: 7.5rem 0 7rem;
+    @include flex(stretch, space-between);
+  }
+  &-column {
+    width: calc(35% - 2.5rem);
+    &:first-child {
+      width: calc(40% - 2.5rem);
+    }
+    &:last-child {
+      width: calc(25% - 2.5rem);
+    }
+  }
+  &-heading {
+    text-transform: uppercase;
+    font-weight: 500;
+    height: 4rem;
+    margin-bottom: 2rem;
+    &--logo {
+      text-transform: none;
+      font-size: 4.6rem;
+      font-weight: bold;
+      color: $grey-dark-color;
+      font-weight: 600;
+      display: inline-block;
+    }
+  }
+  &-desc {
+    margin-bottom: 4.5rem;
+    margin-top: 2rem;
+  }
+
+  &-follower {
+    strong {
+      font-weight: bold;
+      font-size: 1.8rem;
+    }
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid $border-color;
+  }
+  &-social {
+    @include flex(center);
+    margin-bottom: 3.5rem;
+    &-icon {
+      color: $third-color;
+      margin-left: 1.5rem;
+      font-size: 2rem;
+    }
+  }
+  &-form {
+    width: 100%;
+    // max-width: 38rem;
+    @include flex();
+    &-input {
+      padding: 1.5rem;
+      @include bgColor(white);
+      border: 1px solid $border-color;
+      border-right: 0;
+      font-family: $secondary-font;
+      font-size: 1.5rem;
+      font-style: italic;
+      width: 100%;
+    }
+    &-button {
+      @include bgColor($third-color);
+      color: white;
+      text-transform: uppercase;
+      padding: 1.5rem 3.5rem;
+      border: 0;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+  }
+
+  &-blog {
+    @include flex(center);
+    margin-bottom: 3rem;
+  }
+  &-blog-image {
+    @include size(12rem, 8rem);
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+  &-blog-info {
+    padding-left: 2rem;
+  }
+  &-blog-title {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    font-weight: 500;
+    color: $title-color;
+    @include textClamp(2);
+  }
+
+  &-images {
+    @include flex(stretch, flex-start, row, flex, wrap);
+    margin-left: -2px;
+    margin-bottom: 2rem;
+  }
+  &-image {
+    width: calc(33.33% - 2px);
+    margin-left: 2px;
+    margin-bottom: 2px;
+    padding-bottom: 33.33%;
+    height: 0;
+    position: relative;
+    img {
+      @include size(100%);
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+  &-images-more {
+    color: #000;
+  }
+  &-bottom {
+    padding: 2.5rem 0;
+    text-align: center;
+    border-top: $border-color 1px solid;
+    span {
+      color: $primary-color;
+    }
+  }
+
+  @include maxWidth(1023px) {
+    &-top {
+      display: block;
+      padding: 5rem 0 2rem;
+    }
+    &-column:not(:nth-child(99)) {
+      width: 100%;
+      margin-bottom: 3rem;
+    }
+    &-heading {
+      margin-bottom: 1rem;
+      height: auto;
+    }
+  }
+}
