@@ -15,12 +15,14 @@ mixin BlockBox(caption, title, desc)
 		if desc
 			p.block-box-desc= desc
 
-mixin AboutItem(src, classIcon, title, alt = "")
+//- data = {src = "", classIcon = "", title = "", alt = ""} -> data.src, data.classIcon...
+
+mixin AboutItem(data)
 	.about-item
-		img.about-image(src= src alt= alt)
+		img.about-image(src= data.src alt= data.alt)
 		.about-content
-			i(class= classIcon).about-icon
-			span.about-title= title
+			i(class= data.classIcon).about-icon
+			span.about-title= data.title
 
 mixin NumberItem(count, text)
 	li.number-item
@@ -44,15 +46,18 @@ mixin WedoItem (src, title, iconClass, content, active = "", alt = "")
 			p.wedo-accordion-text= content
 
 
-mixin QuoteContent(src, desc, quote, alt = "")
-	i.fal.fa-angle-left.quote-arrow.quote-arrow-left
-	.quote-content
-		.quote-icon
-			img(src= src, alt= alt)
+mixin QuoteItem(src, desc, quote, type = false, alt = "")
+	//- i.fal.fa-angle-left.quote-arrow.quote-arrow-left
+	.quote-item
+		if type === false
+			.quote-icon
+				img(src= src, alt= alt)
+		else
+			img(src= src, alt= alt).quote-image
 		.quote-info
 			p.quote-desc= desc
 			span.quote-author= quote
-	i.fal.fa-angle-right.quote-arrow.quote-arrow-right
+	//- i.fal.fa-angle-right.quote-arrow.quote-arrow-right
 
 mixin SocialLink(fb = "#", tw = "#", pin ="#", ins="#")
 	ul.team-social

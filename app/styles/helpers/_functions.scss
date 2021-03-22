@@ -1,0 +1,5 @@
+//Bringing configuration objects to Sass
+
+@function extend($obj, $ext-obj) {
+  @return map-merge($obj, $ext-obj);
+}

@@ -81,13 +81,15 @@
   #{$itemClass} {
     position: relative;
     z-index: 1;
-    transition: transform 0.25s linear;
+    & > * {
+      transition: transform 0.25s linear;
+      will-change: transform;
+    }
     @if ($transform == "true") {
       &:after {
         content: "";
         @include absoluteFull();
         @include bgColor($third-color);
-        transition: transform 0.25s linear;
         z-index: -1;
       }
     }
@@ -98,9 +100,8 @@
         visibility: visible;
       }
       @if ($transform == "true") {
-        transform: translate(-1rem, -1rem);
-        &::after {
-          transform: translate(1rem, 1rem);
+        & > * {
+          transform: translate(-1rem, -1rem);
         }
       }
     }
@@ -132,4 +133,33 @@
     scroll-snap-align: start;
     width: auto;
   }
+}
+// object to mixin sass
+@mixin color($config: ()) {
+  // Extending the default arguments with the given object
+  $config: extend(
+    (
+      color: red,
+    ),
+    $config
+  );
+  color: map-get($config, color);
+}
+
+@mixin flexbox2($config: ()) {
+  $config: extend(
+    (
+      display: flex,
+      alignItems: stretch,
+      justifyContent: flex-start,
+      flexDirection: row,
+      flexWrap: nowrap,
+    ),
+    $config
+  );
+  display: map-get($config, display);
+  align-items: map-get($config, alignItems);
+  justify-content: map-get($config, justifyContent);
+  flex-direction: map-get($config, flexDirection);
+  flex-wrap: map-get($config, flexWrap);
 }

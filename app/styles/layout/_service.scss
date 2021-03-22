@@ -23,6 +23,13 @@
     width: calc(100% - 7.5rem);
     height: 100%;
     // @include flex(flex-start, space-between, column);
+    @include flexbox2(
+      (
+        alignItems: flex-start,
+        justifyContent: space-between,
+        flexDirection: column,
+      )
+    );
   }
   &-title {
     color: $title-color;
